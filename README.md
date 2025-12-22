@@ -59,7 +59,7 @@ pct enter 300
 ```bash
 # Update system
 # Pre-fix locale
-apt update && apt upgrade -y && apt install -y locales && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+apt update && apt upgrade -y && apt install -y curl git locales && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
 # Install Docker
 curl -fsSL https://get.docker.com | sh
