@@ -1,0 +1,23 @@
+# Environment variables
+.env
+
+# Data directories - ignore contents but keep .gitkeep
+keycloak/data/*
+!keycloak/data/.gitkeep
+postgres/data/*
+!postgres/data/.gitkeep
+portainer/data/*
+!portainer/data/.gitkeep
+loki/data/*
+!loki/data/.gitkeep
+grafana/data/*
+!grafana/data/.gitkeep
+traefik/letsencrypt/*
+!traefik/letsencrypt/.gitkeep
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,29 @@
+# Keycloak Configuration
+KEYCLOAK_ADMIN=admin
+KEYCLOAK_ADMIN_PASSWORD=changeme_admin_password
+KC_HOSTNAME=keycloak.example.com
+KC_PROXY=edge
+
+# PostgreSQL Configuration
+POSTGRES_DB=keycloak
+POSTGRES_USER=keycloak
+POSTGRES_PASSWORD=changeme_postgres_password
+
+# Traefik Configuration
+TRAEFIK_DASHBOARD_USER=admin
+# Generate hashed password with: echo $(htpasswd -nb admin yourpassword) | sed -e s/\\$/\\$\\$/g
+# Or online at: https://hostingcanada.org/htpasswd-generator/ (escape $ as $$)
+TRAEFIK_DASHBOARD_PASSWORD=admin:$$apr1$$example$$hashgoeshere
+ACME_EMAIL=admin@example.com
+
+# Grafana Configuration
+GF_SECURITY_ADMIN_USER=admin
+GF_SECURITY_ADMIN_PASSWORD=changeme_grafana_password
+GF_SERVER_DOMAIN=grafana.example.com
+GF_SERVER_ROOT_URL=https://grafana.example.com
+
+# Loki Configuration
+LOKI_PORT=3100
+
+# General Configuration
+TZ=UTC
