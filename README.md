@@ -65,7 +65,7 @@ apt install -y curl git locales
 locale-gen en_US.UTF-8
 
 # Apply locale settings
-export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8r
+export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 curl -fsSL https://get.docker.com | sh
 
 # Enable Docker
