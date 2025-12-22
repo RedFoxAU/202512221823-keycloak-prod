@@ -32,7 +32,7 @@ Production-ready Keycloak deployment with Traefik reverse proxy, PostgreSQL, cen
 
 ```bash
 # On Proxmox host
-pct create 300 local:vztmpl/debian-13-standard_13.0-1_amd64.tar.zst \
+pct create 300 local:vztmpl/debian-13-standard_13.1-2_amd64.tar.zst \
   --hostname keycloak-prod \
   --cores 4 \
   --memory 8192 \
