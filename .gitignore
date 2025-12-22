@@ -1,0 +1,28 @@
+# Environment variables
+.env
+
+# Data directories
+postgres/data/
+portainer/data/
+grafana/data/
+loki/data/
+
+# Traefik files
+traefik/acme.json
+traefik/logs/
+
+# Backups
+*.tar.gz
+*.sql
+*.dump
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
