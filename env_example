@@ -11,7 +11,9 @@ POSTGRES_PASSWORD=changeme_postgres_password
 
 # Traefik Configuration
 TRAEFIK_DASHBOARD_USER=admin
-TRAEFIK_DASHBOARD_PASSWORD=changeme_traefik_password
+# Generate hashed password with: echo $(htpasswd -nb admin yourpassword) | sed -e s/\\$/\\$\\$/g
+# Or online at: https://hostingcanada.org/htpasswd-generator/ (escape $ as $$)
+TRAEFIK_DASHBOARD_PASSWORD=admin:$$apr1$$example$$hashgoeshere
 ACME_EMAIL=admin@example.com
 
 # Grafana Configuration

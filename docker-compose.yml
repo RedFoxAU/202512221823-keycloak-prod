@@ -121,6 +121,8 @@ services:
     networks:
       - traefik-public
     volumes:
+      # Note: Portainer requires write access to Docker socket for container management
+      # For enhanced security, consider using Docker-in-Docker or restricting Portainer access
       - /var/run/docker.sock:/var/run/docker.sock
       - ./portainer/data:/data
     labels:

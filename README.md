@@ -38,12 +38,32 @@ Production Keycloak setup with Docker Compose, Traefik reverse proxy, PostgreSQL
 
 All configuration is managed through environment variables in the `.env` file. See `env_example` for all available options.
 
+### Generating Hashed Passwords
+
+For Traefik dashboard BasicAuth, you need to generate a hashed password:
+
+```bash
+# Using htpasswd (recommended)
+echo $(htpasswd -nb admin yourpassword) | sed -e s/\\$/\\$\\$/g
+
+# Or use an online generator and escape $ as $$
+# https://hostingcanada.org/htpasswd-generator/
+```
+
+Then set `TRAEFIK_DASHBOARD_PASSWORD` in `.env` to the generated hash (e.g., `admin:$$apr1$$...`).
+
 ### Important Security Notes
 
-- Change all default passwords in `.env` file
-- The `.env` file is gitignored and should never be committed
+- **Change all default passwords** in `.env` file before deployment
+- **Use hashed passwords** for Traefik BasicAuth (not plain text)
+- The `.env` file is gitignored and should never be committed to version control
 - Data directories are gitignored to prevent accidental commits of sensitive data
-- For production use, ensure proper firewall rules are in place
+- For production use:
+  - Ensure proper firewall rules are in place
+  - Consider restricting Portainer access or using alternative authentication methods
+  - Review and harden Traefik configuration based on your security requirements
+  - Use strong, unique passwords for all services
+  - Regularly update container images for security patches
 
 ## Data Persistence
 
