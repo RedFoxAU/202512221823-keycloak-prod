@@ -51,15 +51,15 @@ zfs set recordsize=16k rpool/data/subvol-300-disk-0
 pct start 300
 pct enter 300
 
-# Pre-fix locale
-apt update && apt upgrade -y && apt install -y locales && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+
 ```
 
 ### 2. Install Docker
 
 ```bash
 # Update system
-apt update && apt upgrade -y
+# Pre-fix locale
+apt update && apt upgrade -y && apt install -y locales && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
 # Install Docker
 curl -fsSL https://get.docker.com | sh
