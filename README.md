@@ -17,7 +17,8 @@ Production-ready Keycloak deployment with Traefik reverse proxy, PostgreSQL, cen
 ### Infrastructure
 - Proxmox VE host
 - Debian 13 (Trixie) LXC container (unprivileged)
-- 4 CPU cores, 8GB RAM minimum
+**Minimal (1-10 users):** 2 CPU cores, 4GB RAM minimum
+- **Recommended (10-100 users):** 4 CPU cores, 8GB RAM minimum
 - ZFS pool with `recordsize=16k` for PostgreSQL
 
 ### External Services
@@ -34,12 +35,12 @@ Production-ready Keycloak deployment with Traefik reverse proxy, PostgreSQL, cen
 # On Proxmox host
 pct create 300 local:vztmpl/debian-13-standard_13.1-2_amd64.tar.zst \
   --hostname keycloak-prod \
-  --cores 4 \
-  --memory 8192 \
-  --swap 2048 \
+  --cores 2
+  --memory 4096
+  --swap 1024
   --net0 name=eth0,bridge=vmbr0,ip=dhcp \
   --storage local-zfs \
-  --rootfs local-zfs:32 \
+  --rootfs local-z16:32 \
   --unprivileged 1 \
   --features nesting=1
 ```
