@@ -58,10 +58,14 @@ pct enter 300
 
 ```bash
 # Update system
-# Pre-fix locale
-apt update && apt upgrade -y && apt install -y curl git locales && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+# Install Dockeapt update && apt upgrade -y
+apt install -y curl git locales
 
-# Install Docker
+# Generate locale
+locale-gen en_US.UTF-8
+
+# Apply locale settings
+export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8r
 curl -fsSL https://get.docker.com | sh
 
 # Enable Docker
