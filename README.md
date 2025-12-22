@@ -50,6 +50,9 @@ zfs set recordsize=16k rpool/data/subvol-300-disk-0
 # Start container
 pct start 300
 pct enter 300
+
+# Pre-fix locale
+apt update && apt upgrade -y && apt install -y locales && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 ```
 
 ### 2. Install Docker
