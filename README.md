@@ -42,7 +42,8 @@ pct create 300 local:vztmpl/debian-13-standard_13.1-2_amd64.tar.zst \
   --rootfs local-zfs:32 \
   --unprivileged 1 \
   --features nesting=1
-
+```
+```bash
 # Set ZFS recordsize for PostgreSQL
 zfs set recordsize=16k rpool/data/subvol-300-disk-0
 
