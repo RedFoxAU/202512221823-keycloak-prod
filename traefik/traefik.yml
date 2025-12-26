@@ -51,7 +51,7 @@ providers:
 certificatesResolvers:
   cloudflare:
     acme:
-      email: admin@${DOMAIN}
+      email: admin@acmeexampleemail.com
       storage: /acme.json
       dnsChallenge:
         provider: cloudflare
