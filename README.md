@@ -59,7 +59,8 @@ pct enter 300
 
 ```bash
 # Update system
-# Install Dockeapt update && apt upgrade -y
+# Install Docker
+apt update && apt upgrade -y
 apt install -y curl git locales
 
 # Generate locale
