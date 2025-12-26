@@ -111,6 +111,9 @@ mkdir -p traefik/logs postgres/data portainer/data loki/data grafana/data
 # Set proper permissions
 chmod 600 traefik/acme.json 2>/dev/null || touch traefik/acme.json && chmod 600 traefik/acme.json
 chown -R 472:472 grafana/data  # Grafana UID
+
+# Loki Plugin
+docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions
 ```
 
 ### 6. Deploy Stack
