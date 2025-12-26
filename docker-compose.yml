@@ -1,7 +1,6 @@
 services:
   traefik:
-    image: traefik:v3.4
-    container_name: traefik
+    image: traefik:latest    container_name: traefik
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
@@ -12,7 +11,6 @@ services:
       - "443:443"
     environment:
       - CF_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
-            - DOCKER_API_VERSION=1.44
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
